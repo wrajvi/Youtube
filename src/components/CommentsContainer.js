@@ -125,12 +125,12 @@ const Comment=({data})=>{
 
 
 const CommentsList=({comments}) =>{
-    console.log(comments);
+    // console.log(comments);
       return comments.map((comment,index)=>(
-       <div> 
+       <div key={index}> 
        <Comment key={index} data={comment}/>
-       <div className="ml-5 pl-5 border border-l-black">
-       <CommentsList comments={comment.reply}/>
+       <div  className="ml-5 pl-5 border border-l-black">
+       <CommentsList key={index} comments={comment.reply}/>
        </div>
        </div>)
        );
